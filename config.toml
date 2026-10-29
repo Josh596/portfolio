@@ -31,3 +31,10 @@ socials = [
     { name = "linkedin", url = "https://www.linkedin.com/in/joshua-olukotun/" },
     { name = "email", url = "mailto:joshuaolukotun3@gmail.com" },
 ]
+
+[extra.content_security_policy]
+enable = true
+allowed_domains = [
+    { directive = "script-src", domains = ["'self'", "stats.olukotun.ng"] },
+    { directive = "connect-src", domains = ["'self'", "stats.olukotun.ng"] },
+]
