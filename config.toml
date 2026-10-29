@@ -23,7 +23,7 @@ theme = "catppuccin-mocha"
 stylesheets = ["custom.css"]
 
 main_menu = [
-    { name = "blog", url = "/blog/", trailing_slah = true },
+    { name = "blog", url = "/blog/", trailing_slash = true },
 ]
 
 socials = [
