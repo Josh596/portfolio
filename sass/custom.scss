@@ -1,0 +1,16 @@
+.gallery {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+
+    img {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+    }
+}
+
+// Stack the images on phones
+@media (max-width: 600px) {
+    .gallery { flex-direction: column; }
+}

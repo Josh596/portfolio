@@ -1,0 +1,33 @@
+# The URL the site will be built for
+base_url = "https://joshua.olukotun.ng"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# The site title and description; used in feeds by default.
+title = "Joshua Olukotun"
+description = "Joshua Olukotun's personal website and blog"
+
+theme = "terminus"
+
+[markdown]
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+# Put all your custom variables here
+stylesheets = ["custom.css"]
+
+main_menu = [
+    { name = "blog", url = "/blog/", trailing_slah = true },
+]
+
+socials = [
+    { name = "github", url = "https://github.com/Josh596" },
+    { name = "linkedin", url = "https://www.linkedin.com/in/joshua-olukotun/" },
+    { name = "email", url = "mailto:joshuaolukotun3@gmail.com" },
+]
