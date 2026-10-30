@@ -15,6 +15,10 @@ theme = "terminus"
 
 generate_feeds = true
 
+# Whether external links are to be opened in a new tab
+# If this is true, a `rel="noopener"` will always automatically be added for security reasons
+external_links_target_blank = true
+
 [markdown]
 
 [markdown.highlighting]
