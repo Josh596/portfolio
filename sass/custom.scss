@@ -1,18 +1,15 @@
+// Side by side when there's room, stacked on phones
 .gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-    align-items: flex-start;
+    margin: 25px 0;
 
     img {
-        flex: 1;
-        min-width: 0;
+        width: 100%;
+        height: auto;
         margin: 0;
     }
-}
-
-// Stack the images on phones
-@media (max-width: 600px) {
-    .gallery { flex-direction: column; }
 }
 
 // Mark links in page content that open in a new tab
