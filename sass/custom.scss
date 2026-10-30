@@ -14,3 +14,12 @@
 @media (max-width: 600px) {
     .gallery { flex-direction: column; }
 }
+
+// Mark links in page content that open in a new tab
+main a[target="_blank"]::after {
+    content: "↗";
+    display: inline-block;
+    margin-left: 0.15em;
+    font-size: 0.8em;
+    text-decoration: none;
+}
