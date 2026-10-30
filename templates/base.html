@@ -3,4 +3,15 @@
 
 {% block head %}
 <script defer src="https://stats.olukotun.ng/script.js" data-website-id="af378412-93e1-4596-8065-7319abd10a96"></script>
+
+
+{%- if config.extra.default_social_image and not page.extra.social_media_image.path and not section.extra.social_media_image.path %}
+{%- set img = resize_image(path=config.extra.default_social_image, width=1200, height=675, op="fit") %}
+<meta property="og:image" content="{{ img.url | safe }}">
+<meta property="og:image:width" content="{{ img.width }}">
+<meta property="og:image:height" content="{{ img.height }}">
+<meta property="og:image:alt" content="Joshua Olukotun: backend, python, rust, embedded">
+<meta name="twitter:card" content="summary_large_image">
+{%- endif %}
+
 {% endblock head %}

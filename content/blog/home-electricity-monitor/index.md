@@ -1,6 +1,11 @@
 +++
 title = "Building a Home Electricity Monitor"
 date = 2026-10-29
+
+[extra.social_media_image]
+path = "images/enclosure-in-use.jpg"
+alt_text = "The electricity monitor plugged into a wall socket"
+
 +++
 Imagine you’re at work, and you are deciding on whether to charge your devices before you leave office or to charge them when you get home, but then you wonder, "omo shey light dey house?".
 Well, I often find myself in situations where I want to know if I currently have light, when they took the light, or how long I've had light. So, I built a system that tells me exactly that.

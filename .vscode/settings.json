@@ -1,0 +1,7 @@
+{
+    // Zola templates are Tera, not plain HTML: the built-in HTML formatter
+    // wraps long {% %} tags and can break them.
+    "[html]": {
+        "editor.formatOnSave": false
+    }
+}

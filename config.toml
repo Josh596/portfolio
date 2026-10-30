@@ -9,9 +9,11 @@ build_search_index = false
 
 # The site title and description; used in feeds by default.
 title = "Joshua Olukotun"
-description = "Joshua Olukotun's personal website and blog"
+description = "Backend developer (Python, Rust) and mechanical engineer. Writing about things I build: embedded systems, servers, and side projects"
 
 theme = "terminus"
+
+generate_feeds = true
 
 [markdown]
 
@@ -21,6 +23,8 @@ theme = "catppuccin-mocha"
 [extra]
 # Put all your custom variables here
 stylesheets = ["custom.css"]
+favicon = "images/favicon.png"
+default_social_image = "images/og-home.png"
 
 main_menu = [
     { name = "blog", url = "/blog/", trailing_slash = true },
@@ -29,7 +33,7 @@ main_menu = [
 socials = [
     { name = "github", url = "https://github.com/Josh596" },
     { name = "linkedin", url = "https://www.linkedin.com/in/joshua-olukotun/" },
-    { name = "email", url = "mailto:joshuaolukotun3@gmail.com" },
+    { name = "email", url = "mailto:joshua@olukotun.ng" },
 ]
 
 [extra.content_security_policy]
@@ -38,3 +42,4 @@ allowed_domains = [
     { directive = "script-src", domains = ["'self'", "stats.olukotun.ng"] },
     { directive = "connect-src", domains = ["'self'", "stats.olukotun.ng"] },
 ]
+
