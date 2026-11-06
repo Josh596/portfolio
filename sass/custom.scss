@@ -12,6 +12,11 @@
     }
 }
 
+// Space between entries on the projects page
+.project-list li + li {
+    margin-top: 1rem;
+}
+
 // Mark links in page content that open in a new tab
 main a[target="_blank"]::after {
     content: "↗";

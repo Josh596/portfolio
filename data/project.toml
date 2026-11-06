@@ -1,0 +1,47 @@
+# Required: name, group, summary, stack
+# Optional: status, repo, demo, writeup, image, image_alt (image_alt is required if image is set)
+# repo and demo are full URLs; writeup is a path on this site
+# group must be one of the groups listed in templates/projects.html
+
+[[projects]]
+name = "electricity monitor"
+group = "hardware"
+summary = "shows me whether there's light at home, since when, and how many hours we've had today. an esp32 plugged into a nepa-only socket pings a rust server, and when the pings stop, there's no light."
+stack = ["rust", "esp32"]
+repo = "https://github.com/Josh596/electricity-monitor"
+writeup = "/blog/home-electricity-monitor/"
+
+[[projects]]
+name = "pepper sorter"
+group = "hardware"
+summary = "a machine that sorts habanero peppers into four grades as they move along a conveyor. a raspberry pi 5 classifies each pepper with a yolo model trained on 1,129 images i collected, and an arduino drives the servo arms that sweep it into a bin. it sorted 240 peppers at 83.3% accuracy, about 11 a minute."
+stack = ["python", "yolo", "ncnn", "raspberry pi", "arduino", "fusion 360"]
+
+[[projects]]
+name = "predator-sense-linux"
+group = "software"
+status = "in progress"
+summary = "a terminal app for keyboard lighting, battery and performance profiles on acer predator laptops."
+stack = ["rust"]
+repo = "https://github.com/Josh596/predator-sense-linux"
+
+[[projects]]
+name = "dns server"
+group = "software"
+summary = "parses and builds dns packets and resolves names recursively over udp."
+stack = ["rust"]
+repo = "https://github.com/Josh596/dns-server-rust"
+
+[[projects]]
+name = "http server"
+group = "software"
+summary = "an http/1.1 server that handles many connections at once with a thread pool."
+stack = ["rust"]
+repo = "https://github.com/Josh596/http-server-rust"
+
+[[projects]]
+name = "minigit"
+group = "software"
+summary = "core git rebuilt in python, including commits, pack files and cloning real repositories."
+stack = ["python"]
+repo = "https://github.com/Josh596/minigit"

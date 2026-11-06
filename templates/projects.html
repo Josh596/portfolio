@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+
+{% block main %}
+{% set data = load_data(path="data/project.toml") %}
+{% set groups = ["hardware", "software"] %}
+{% set required = ["name", "group", "summary", "stack"] %}
+
+{# Stop the build if an entry is incomplete or would not be shown #}
+{% for project in data.projects %}
+  {% set label = project | get(key="name", default="unnamed") %}
+  {% for field in required %}
+    {% set value = project | get(key=field, default="") %}
+    {% if not value %}
+      {{ throw(message="project.toml: '" ~ label ~ "' is missing '" ~ field ~ "'") }}
+    {% endif %}
+  {% endfor %}
+  {% if project.group not in groups %}
+    {{ throw(message="project.toml: '" ~ label ~ "' has unknown group '" ~ project.group ~ "'") }}
+  {% endif %}
+  {% if project.image and not project.image_alt %}
+    {{ throw(message="project.toml: '" ~ label ~ "' has an image but no 'image_alt'") }}
+  {% endif %}
+{% endfor %}
+
+<article class="post content">
+  <h1>{{ page.title }}</h1>
+  {{ page.content | safe }}
+
+  {% for group in groups %}
+    {% set projects = data.projects | filter(attribute="group", value=group) %}
+    {% if projects %}
+      <h2>{{ group }}</h2>
+      <ul class="project-list">
+        {% for project in projects %}
+          <li>
+            <strong>{{ project.name }}</strong>{% if project.status %} ({{ project.status }}){% endif %}: {{ project.summary }}
+            {% if project.image %}
+              <img src="{{ get_url(path=project.image) }}" alt="{{ project.image_alt }}" loading="lazy">
+            {% else %}
+              <br>
+            {% endif %}
+            {% for item in project.stack %}<code>{{ item }}</code>{% if not loop.last %} {% endif %}{% endfor %}
+            {% if project.repo %} · <a href="{{ project.repo | safe }}" target="_blank" rel="noopener">repo</a>{% endif %}
+            {% if project.demo %} · <a href="{{ project.demo | safe }}" target="_blank" rel="noopener">demo</a>{% endif %}
+            {% if project.writeup %} · <a href="{{ get_url(path=project.writeup, trailing_slash=true) }}">write-up</a>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+</article>
+{% endblock %}
