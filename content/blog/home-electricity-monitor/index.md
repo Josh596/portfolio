@@ -1,10 +1,10 @@
 +++
-title = "Building a Home Electricity Monitor"
+title = "Shey Light Dey House? How I Built an ESP32 Power Monitor for My Home"
 date = 2026-10-29
 
 [extra.social_media_image]
-path = "images/enclosure-in-use.jpg"
-alt_text = "The electricity monitor plugged into a wall socket"
+path = "images/og-image.jpg"
+alt_text = "An ESP32 power monitor in a wall socket beside its phone dashboard showing the power has been off for 5h 59m"
 
 +++
 Imagine you’re at work, and you are deciding on whether to charge your devices before you leave office or to charge them when you get home, but then you wonder, "omo shey light dey house?".
